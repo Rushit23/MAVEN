@@ -1,0 +1,47 @@
+MAVEN
+
+
+
+
+
+Maven is a Build Management tool
+
+- Provides Sepration between Object Repository and Test Cases
+
+- Will Download and Import Jars
+
+
+Can Get All The Dependencies at : https://mvnrepository.com/
+
+
+Jenkins is a Continueous Integration Tool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download And Install Maven :
+--------------------------------------------------------------------------------------------
+
+Maven Download 
+
+https://maven.apache.org/download.cgi
+
+Download the ZIP File for Windows (Download The stable Version)
+
+UnZIp and Put it into C Drive
+
+Set System Variable to Detect Maven 
+
+Restart The System 
+
+To Verify Installation Of Maven :COMMAND LINE     mvn -version

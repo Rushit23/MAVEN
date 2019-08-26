@@ -1,0 +1,499 @@
+					
+
+
+
+MAVEN
+
+
+
+
+
+Maven is a Build Management tool
+
+- Provides Sepration between Object Repository and Test Cases
+
+- Will Download and Import Jars
+
+
+Can Get All The Dependencies at : https://mvnrepository.com/
+
+
+Jenkins is a Continueous Integration Tool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Download And Install Maven :
+--------------------------------------------------------------------------------------------
+
+Maven Download 
+
+https://maven.apache.org/download.cgi
+
+Download the ZIP File for Windows (Download The stable Version)
+
+UnZIp and Put it into C Drive
+
+Set System Variable to Detect Maven 
+
+Restart The System 
+
+To Verify Installation Of Maven :COMMAND LINE     mvn -version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE MAVEN PROJECT 
+---------------------------------------------------------------------------------------------
+
+		MAVEN
+
+
+
+
+	(1)	Verify MAVEN Is Installed :
+
+		mvn -version
+
+		Provides The Clear OuterStructure In a framework Standard
+
+
+
+
+	(2)	Create A Folder Apps  In C Drive
+
+		APPs  
+
+	(3)	Navigate to folder Into CMD
+
+		C:\> cd c:\Apps
+
+	4)	Create MAVEN Project
+
+		mvn archetype:generate
+
+		 515:515  27:27
+
+		 Property 'groupid' : Framework
+
+		 artifactId:Experiment Sel (Project Name)
+
+		 Version: Enter
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+
+	5)  	After Creating the project You Will Have To Give The Command  To Connect Your Project To Eclipse. But You Will Have To Provide The Path From The project Folder
+
+		
+
+		 (Place Where You POM XML IS Present)
+
+		 c:\Apps\Training >  
+
+		mvn eclipse:eclipse
+
+
+
+
+
+Commands			   
+---------------------------------------------------------
+
+
+
+		C:\> cd c:\Apps
+
+		mvn archetype:generate   
+
+		(Stick With The Same Numbers What Is Given)
+
+		515:515  27:27
+
+
+		 Property 'groupid' : Banking (Package Id)
+
+		 artifactId: (Project Name)
+
+		 Version: 1
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+		 mvn eclipse:eclipse
+
+
+		 c:\Apps\Training >  mvn eclipse:eclipse
+
+
+
+
+
+
+
+  Import Project    into eclipse              
+-----------------------------------------------------------------------------------
+
+
+
+
+Import
+
+Maven > Existing Maven Projects > Next > Browse > C Drive > Apps > Automation > Finish
+
+
+
+
+
+
+
+
+
+
+
+
+MAVEN	Commands           
+******************************
+
+
+
+
+
+Creating Project
+----------------------
+
+
+
+mvn archetype:generate
+
+Groupid
+
+Artifact id:
+
+Command will connect Maven to eclipse
+
+mvn eclipse:eclipse
+
+
+
+
+
+COmpile
+-------------
+
+
+mvn compile    - Checks for Syntax errors in the code
+
+mvn test           - Downlaod all the Jars which are required. Reference pom.xml
+
+
+
+
+Profiles  (Running The Tests)
+-------------------------------------------
+
+
+
+
+mvn test -PSmokeTesting
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+		mvn -version
+
+
+
+		Create a folder into C drive APPS
+
+
+		C:\> cd c:\Apps
+
+
+		mvn archetype:generate
+
+		 515:515  27:27
+
+		 Property 'groupid' : Framework
+
+		 artifactId:Experiment Sel (Project Name)
+
+		 Version: Enter
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+
+
+		Import
+
+		Maven > Existing Maven Projects > Next > Browse > C Drive > Apps > Debit Card > Finish
+
+
+
+		 mvn eclipse:eclipse
+
+
+		 c:\Apps\Training >  mvn eclipse:eclipse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		INTO POM.XML
+	*****************************
+
+ <dependencies>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
+
+
+ <dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>6.10</version>
+  <scope>test</scope>
+</dependency>
+   
+   
+ <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>3.6.0</version>
+</dependency>
+    
+    
+  </dependencies>
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+WebDriverManager Class for Selenium WebDriver -No Driver Required
+
+
+
+
+
+
+https://github.com/bonigarcia/webdrivermanager
+
+https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.14.0
+
+
+
+
+
+
+CTRL + s
+
+Into Maven >
+
+Pom.xml Add the Dependency
+
+
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
+
+
+Will Download the Latest vesion of Selenium Jars
+
+
+
+WebDriverManager.chromedriver().setup();
+WebDriverManager.firefoxdriver().setup();
+WebDriverManager.operadriver().setup();
+WebDriverManager.phantomjs().setup();
+WebDriverManager.edgedriver().setup();
+WebDriverManager.iedriver().setup();
+
+
+
+CODE 					   
+-------------------------------------------
+
+
+
+
+		 
+    @Test
+    public void FirstTestCase() throws InterruptedException
+    {
+    	 WebDriverManager.chromedriver().setup();
+		 WebDriver driver = new ChromeDriver ();
+		 
+		 driver.manage().window().maximize();
+		 driver.get("https://www.rushitpatel.com/");
+		 	 
+		 Thread.sleep(15000); 
+		 driver.quit();
+    }
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+Running The Tests At The Package Level and Class Level
+-----------------------------------------------------------
+
+
+
+
+   <test name="Smoke Testcases">
+    <packages>
+       <package name="pageobjecttestcases" />      
+    </packages>
+    
+    </test>
+
+
+
+
+
+
+ <test name="Test">
+    <classes>
+      <class name="Framework.AppTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+
+
+
+------------------------------------------
+Maven TestNG Dependency
+-------------------------------------------
+
+
+
+
+
+Google: Maven TestNG Dependency
+
+https://testng.org/doc/maven.html
+
+Must ADD The TestNG Library And Annotations Within The project
+
+
+
+For Other Dependencies
+
+https://mvnrepository.com
+
+
+MAVEN TestNG Integration
+------------------------------------
+
+https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+
+
+1. Must Add  The TestNG Library Within The Project
+
+2. Must Add The Sure Fire Plugin 
+
+<profiles>
+  <profile>
+  <id>SmokeTesting</id>
+
+ <build>
+<plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M3</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    
+</plugins>
+</build>
+
+ </profile>
+
+</profiles>
+
+
+
+---------------------------------------------------------------------------------------
+For Runnig Seprate XML File :  Provide The id of the Profile
+
+
+mvn test -PSmokeTesting
+
+
+
+--------------------------------------------------------------------------------------
+
+
+Check The Test Report Into  : Test OutPut File
+
+
+
+

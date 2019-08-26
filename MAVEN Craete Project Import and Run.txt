@@ -1,0 +1,205 @@
+CREATE MAVEN PROJECT 
+---------------------------------------------------------------------------------------------
+
+		MAVEN
+
+
+
+
+	(1)	Verify MAVEN Is Installed :
+
+		mvn -version
+
+		Provides The Clear OuterStructure In a framework Standard
+
+
+
+
+	(2)	Create A Folder Apps  In C Drive
+
+		APPs  
+
+	(3)	Navigate to folder Into CMD
+
+		C:\> cd c:\Apps
+
+	4)	Create MAVEN Project
+
+		mvn archetype:generate
+
+		 515:515  27:27
+
+		 Property 'groupid' : Framework
+
+		 artifactId:Experiment Sel (Project Name)
+
+		 Version: Enter
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+
+	5)  	After Creating the project You Will Have To Give The Command  To Connect Your Project To Eclipse. But You Will Have To Provide The Path From The project Folder
+
+		
+
+		 (Place Where You POM XML IS Present)
+
+		 c:\Apps\Training >  
+
+		mvn eclipse:eclipse
+
+
+
+
+
+Commands			   
+---------------------------------------------------------
+
+
+
+		C:\> cd c:\Apps
+
+		mvn archetype:generate   
+
+		(Stick With The Same Numbers What Is Given)
+
+		515:515  27:27
+
+
+		 Property 'groupid' : Banking (Package Id)
+
+		 artifactId: (Project Name)
+
+		 Version: 1
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+		 mvn eclipse:eclipse
+
+
+		 c:\Apps\Training >  mvn eclipse:eclipse
+
+
+
+
+
+
+
+  Import Project    into eclipse              
+-----------------------------------------------------------------------------------
+
+
+
+
+Import
+
+Maven > Existing Maven Projects > Next > Browse > C Drive > Apps > Automation > Finish
+
+
+
+
+
+
+
+
+
+
+
+
+MAVEN	Commands           
+******************************
+
+
+
+
+
+Creating Project
+----------------------
+
+
+
+mvn archetype:generate
+
+Groupid
+
+Artifact id:
+
+Command will connect Maven to eclipse
+
+mvn eclipse:eclipse
+
+
+
+
+
+COmpile
+-------------
+
+
+mvn compile    - Checks for Syntax errors in the code
+
+mvn test           - Downlaod all the Jars which are required. Reference pom.xml
+
+
+
+
+Profiles  (Running The Tests)
+-------------------------------------------
+
+
+
+
+mvn test -PSmokeTesting
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+		mvn -version
+
+
+
+		Create a folder into C drive APPS
+
+
+		C:\> cd c:\Apps
+
+
+		mvn archetype:generate
+
+		 515:515  27:27
+
+		 Property 'groupid' : Framework
+
+		 artifactId:Experiment Sel (Project Name)
+
+		 Version: Enter
+
+		 Value For Property : Enter
+
+		 Y: Y
+
+
+
+		Import
+
+		Maven > Existing Maven Projects > Next > Browse > C Drive > Apps > Debit Card > Finish
+
+
+
+		 mvn eclipse:eclipse
+
+
+		 c:\Apps\Training >  mvn eclipse:eclipse
+
+
+
+
+

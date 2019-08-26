@@ -1,0 +1,221 @@
+
+
+
+
+		INTO POM.XML
+	*****************************
+
+ <dependencies>
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+    
+    <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
+
+
+ <dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>6.10</version>
+  <scope>test</scope>
+</dependency>
+   
+   
+ <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>3.6.0</version>
+</dependency>
+    
+    
+  </dependencies>
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+WebDriverManager Class for Selenium WebDriver -No Driver Required
+
+
+
+
+
+
+https://github.com/bonigarcia/webdrivermanager
+
+https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.14.0
+
+
+
+
+
+
+CTRL + s
+
+Into Maven >
+
+Pom.xml Add the Dependency
+
+
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.14.0</version>
+</dependency>
+
+
+Will Download the Latest vesion of Selenium Jars
+
+
+
+WebDriverManager.chromedriver().setup();
+WebDriverManager.firefoxdriver().setup();
+WebDriverManager.operadriver().setup();
+WebDriverManager.phantomjs().setup();
+WebDriverManager.edgedriver().setup();
+WebDriverManager.iedriver().setup();
+
+
+
+CODE 					   
+-------------------------------------------
+
+
+
+
+		 
+    @Test
+    public void FirstTestCase() throws InterruptedException
+    {
+    	 WebDriverManager.chromedriver().setup();
+		 WebDriver driver = new ChromeDriver ();
+		 
+		 driver.manage().window().maximize();
+		 driver.get("https://www.rushitpatel.com/");
+		 	 
+		 Thread.sleep(15000); 
+		 driver.quit();
+    }
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+Running The Tests At The Package Level and Class Level
+-----------------------------------------------------------
+
+
+
+
+   <test name="Smoke Testcases">
+    <packages>
+       <package name="pageobjecttestcases" />      
+    </packages>
+    
+    </test>
+
+
+
+
+
+
+ <test name="Test">
+    <classes>
+      <class name="Framework.AppTest"/>
+    </classes>
+  </test> <!-- Test -->
+
+
+
+
+------------------------------------------
+Maven TestNG Dependency
+-------------------------------------------
+
+
+
+
+
+Google: Maven TestNG Dependency
+
+https://testng.org/doc/maven.html
+
+Must ADD The TestNG Library And Annotations Within The project
+
+
+
+For Other Dependencies
+
+https://mvnrepository.com
+
+
+MAVEN TestNG Integration
+------------------------------------
+
+https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+
+
+1. Must Add  The TestNG Library Within The Project
+
+2. Must Add The Sure Fire Plugin 
+
+<profiles>
+  <profile>
+  <id>SmokeTesting</id>
+
+ <build>
+<plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M3</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    
+</plugins>
+</build>
+
+ </profile>
+
+</profiles>
+
+
+
+---------------------------------------------------------------------------------------
+For Runnig Seprate XML File :  Provide The id of the Profile
+
+
+mvn test -PSmokeTesting
+
+
+
+--------------------------------------------------------------------------------------
+
+
+Check The Test Report Into  : Test OutPut File
+
+
+
+
